@@ -10,6 +10,7 @@
     <script src="./assets/js/main.js"></script>
     <script src="./helper/random.js"></script>
     <script src="./helper/imageArray.js"></script>
+    <script src="./helper/sessionStorage.js"></script>
     
 
 
@@ -51,7 +52,7 @@
             </div>
             <div id="tabs-3">
                 <label for='player_name'>Player name:</label>
-                <input type='text' id='player_name'><br>
+                <input type='text' id='player_name' onblur="store_session()"><br>
 
                 <label for='num_cards'>Number of cards:</label>
                 <select id='num_cards'>
