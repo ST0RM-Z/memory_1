@@ -6,12 +6,12 @@ $(document).ready(function () {
 
   console.log(data);
   // console.log("a");
-  // ----------------------calling function in document.ready method
+  // ----------------------calling image method------------
   image();
   function image() {
     imageLogic();
   }
-
+  // ----------------------calling session storage method------------
   function sessionStore() {
     store_session();
   }
