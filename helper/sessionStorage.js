@@ -1,5 +1,5 @@
 const store_session = () => {
-  console.log("session");
+  // console.log("session");
   if (sessionStorage.getItem("player_name") != null) {
     $("#player").text("Player: " + sessionStorage.getItem("player_name"));
     console.log(sessionStorage.getItem("player_name"));
