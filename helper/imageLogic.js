@@ -12,8 +12,8 @@ function imageLogic() {
   const player = sessionStorage.getItem("player_name");
   const cardsNum = sessionStorage.getItem("num_cards");
   console.log(cardsNum);
-  rows = cardsNum / 8;
-  col = cardsNum / 8;
+  // rows = cardsNum / 8 + 1;
+  // col = cardsNum;
   console.log(rows);
   for (var i = 1; i <= rows; i++) {
     // console.log("in--outer--loop");
@@ -35,7 +35,8 @@ function imageLogic() {
       temp1 = temp1.filter(function (element) {
         return element !== undefined;
       });
-      // temp1.length = 8;
+      temp1.length = 8;
+      // 2nd parameter means remove one item only
 
       var temp2 = [...temp1, ...temp1];
 
@@ -94,19 +95,19 @@ function checkClick(flag, temp, cardsNum) {
     src = src.replace("dup", "");
     // console.log("tem", temp[15]);
     console.log(temp);
-    // for (var k = 0; k < cardsNum; k++) {
-    //   // console.log("temp-k", temp[k]);
-    //   // console.log(this);
-    //   // console.log("1111", temp[k]);
-    //   document.getElementById(e.target.id).src = `./images/card_${temp[k]}.png`;
-    // }
+    for (var k = 0; k < temp.length; k++) {
+      // console.log("temp-k", temp[k]);
+      // console.log(this);
+      // console.log("1111", temp[k]);
+      document.getElementById(e.target.id).src = `./images/card_${temp[k]}.png`;
+    }
 
     // console.log("open", openCard);
     if (openCard == 2) {
       // openCard = 0;
       // console.log("src", src1, src2);
       // document.getElementsByTagName("img").disabled = true;
-
+      // console.log(src1[0].src);
       if (src1[0].src === src2[0].src) {
         // console.log("src1", src1[0].id);
         // console.log("src", src2[0].id);
