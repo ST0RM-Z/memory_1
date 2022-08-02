@@ -9,6 +9,12 @@ function imageLogic() {
   var img = null;
   // console.log("src", clone);
 
+  const player = sessionStorage.getItem("player_name");
+  const cardsNum = sessionStorage.getItem("num_cards");
+  console.log(cardsNum);
+  rows = cardsNum / 8;
+  col = cardsNum / 8;
+  console.log(rows);
   for (var i = 1; i <= rows; i++) {
     // console.log("in--outer--loop");
     var tr = document.createElement("tr");
@@ -26,7 +32,10 @@ function imageLogic() {
       // console.log("temp", temp);
       var temp1 = temp.filter((item, index) => temp.indexOf(item) === index);
 
-      temp1.length = 9;
+      temp1 = temp1.filter(function (element) {
+        return element !== undefined;
+      });
+      // temp1.length = 8;
 
       var temp2 = [...temp1, ...temp1];
 
@@ -52,13 +61,13 @@ function imageLogic() {
     cards.appendChild(tr);
   }
 
-  checkClick(flag, temp2);
+  checkClick(flag, temp2, cardsNum);
 
   // ---  calling image id here this is used for pointing current element on click event ---
 }
 var openCard = 0;
 
-function checkClick(flag, temp) {
+function checkClick(flag, temp, cardsNum) {
   // console.log("checkClick", temp);
   let totalScore = 0;
   let cardsOpened = [];
@@ -84,13 +93,13 @@ function checkClick(flag, temp) {
     // console.log("src1", src);
     src = src.replace("dup", "");
     // console.log("tem", temp[15]);
-    for (var k = 0; k <= src; k++) {
-      // console.log("temp-k", temp[k]);
-      // console.log(e.target.id);
-      // console.log("1111", temp[k]);
-
-      document.getElementById(e.target.id).src = `./images/card_${temp[k]}.png`;
-    }
+    console.log(temp);
+    // for (var k = 0; k < cardsNum; k++) {
+    //   // console.log("temp-k", temp[k]);
+    //   // console.log(this);
+    //   // console.log("1111", temp[k]);
+    //   document.getElementById(e.target.id).src = `./images/card_${temp[k]}.png`;
+    // }
 
     // console.log("open", openCard);
     if (openCard == 2) {

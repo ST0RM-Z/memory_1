@@ -6,14 +6,14 @@ $(document).ready(function () {
 
   // console.log(data);
   // console.log("a");
-  // ----------------------calling image method------------
+  // function sessionStore() {
+  //   store_session();
+  // }
+  // // ----------------------calling image method------------
   image();
   function image() {
     imageLogic();
   }
   // ----------------------calling session storage method------------
-  // sessionStore();
-  function sessionStore() {
-    store_session();
-  }
+  store_session();
 });
